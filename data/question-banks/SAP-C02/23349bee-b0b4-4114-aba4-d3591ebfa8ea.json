@@ -1,0 +1,2685 @@
+{
+  "bankId": "23349bee-b0b4-4114-aba4-d3591ebfa8ea",
+  "certificationId": "SAP-C02",
+  "certificationName": "AWS Certified Solutions Architect - Professional",
+  "examCode": "SAP-C02",
+  "createdAt": "2026-07-06T15:01:26.467Z",
+  "questions": [
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "2cc7f068-f744-4efe-b488-f42648cda80c"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "b18b57b8-d6c5-4f7e-bd19-15fdb56b8997"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "7ef5cc4d-01a5-49af-aad5-5793c48e1e57"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine AWS with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "2fd5d460-769e-468d-b979-97b0450f1c61"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine EC2 with automated drift detection and repeatable deployment patterns."
+        },
+        {
+          "label": "F",
+          "text": "Keep a single shared account for all teams and depend on local administrator access to resolve governance exceptions on demand."
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D",
+        "F"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "multi-6",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "65e31ae0-1522-41cd-b6ca-f893afbc3146"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine EC2 with automated drift detection and repeatable deployment patterns."
+        },
+        {
+          "label": "F",
+          "text": "Keep a single shared account for all teams and depend on local administrator access to resolve governance exceptions on demand."
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D",
+        "F"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "multi-6",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "5c5caa05-c8c1-446a-8f69-d30f95472454"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "b660dba6-bf0d-4cbd-897c-d65ef3c445a4"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "f623be84-7479-4be8-a45d-266486f84954"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "dcdf19e9-28d0-4376-8e48-593b48755fe1"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "c257a297-a44a-4806-9e0b-7a567dc741cc"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "70187d44-2d6b-4894-9e9f-41ac3e184422"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine APPLICATION MIGRATION SERVICE with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "c746fd7c-4c7d-4f2c-82ab-4a57b092d40f"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "d8dd28ff-75c3-4864-8349-1dac1a27b542"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "083d7a9e-ceb6-4296-ace4-ad0c5578fa17"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "d8e3ff24-107c-43ab-9dbd-19a62409135c"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine AWS with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "9758a750-65ae-4e8a-b11f-1d5ede69a4b1"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine AWS with automated drift detection and repeatable deployment patterns."
+        },
+        {
+          "label": "F",
+          "text": "Keep a single shared account for all teams and depend on local administrator access to resolve governance exceptions on demand."
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D",
+        "F"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "multi-6",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "e831b254-8cfb-4f97-b591-8f7149bd0cb4"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "4ad1e230-38f7-472c-9097-65c087bfd8e5"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine EC2 with automated drift detection and repeatable deployment patterns."
+        },
+        {
+          "label": "F",
+          "text": "Keep a single shared account for all teams and depend on local administrator access to resolve governance exceptions on demand."
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D",
+        "F"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "multi-6",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "ece9ea9c-72b6-4fe1-966e-c29f4dca9eb0"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "f4df3fcb-a0d6-457e-a2a1-86cda3ac744f"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "443730e2-8783-48a4-8796-a06a625cb152"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "0cf39218-0855-43e9-9d94-bec9ffc1e156"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "44616780-3b22-449a-84c2-e5d2eab6b111"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine APPLICATION MIGRATION SERVICE with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "4a800083-e06c-4d70-82a6-015a20f590aa"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "2098e846-08dc-4fe2-a0c7-82e410c5f824"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "b2759447-1668-4cac-8c56-1cbadb4e379c"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "6151947e-fac1-488e-9b7f-d798585354ef"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "d22c3d9f-11bc-477c-b273-d2933d72fc6a"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "3c0916fe-e97d-4a44-b042-2429fa866614"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "86d6b731-a5d3-4dfa-b980-6a336a73095d"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine TRUSTED ADVISOR with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "0eacbe28-4354-4ac9-92b9-f4853b79d5d2"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "e63c7fbc-1f08-48ae-b4b8-04254a2a1661"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "24c1ce22-05db-4e16-af34-602160379ee0"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "09f2d94b-62eb-46a8-880a-4c35f019cb0f"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "ac612be6-f8d8-48fe-838d-47d902d9fabe"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "2ba61c6c-2360-4fe3-8350-a0c724aa9d3c"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "4705e9f3-fd77-4736-a933-84926c84eed4"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "6d65da57-9ca2-4579-850f-a3c87c1a2081"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "965c6c03-e798-42de-939e-03f6e0f3bf45"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "af1894b5-7dc8-428f-a819-7ee3bdc320f6"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "465d1b62-3fb0-4062-8c71-ed0ec0890ab7"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine TRUSTED ADVISOR with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "604c8a6c-18f3-42b8-b1c7-f9b74161ed9a"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "346eab56-2db5-4097-8c03-8430d1d3f869"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine TRUSTED ADVISOR with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "4885a0be-047b-42b3-a562-31a59def25db"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "98d13736-fd05-4920-8e1f-10d4ee8035eb"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "70755839-9af9-4354-9b1a-14598f4d40ca"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "927b3fcd-d2a0-4f6c-8faa-5cae087bccc2"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine APPLICATION MIGRATION SERVICE with automated drift detection and repeatable deployment patterns."
+        },
+        {
+          "label": "F",
+          "text": "Keep a single shared account for all teams and depend on local administrator access to resolve governance exceptions on demand."
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D",
+        "F"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "multi-6",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "5f620125-091c-418f-9725-ea37e7cd293e"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "afa81da5-e5a5-4d64-bd97-57880eb3cbf0"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine AWS with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "59d1af25-d430-47f1-9bb1-0274f09087cc"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine TRUSTED ADVISOR with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "8cec3c85-6f49-44ad-a6b2-82aebecf900d"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "9562181e-30e2-439d-a962-dd41cb005b56"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "12d3b25f-73dd-48ea-83a0-3be615fb5052"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "27b6cd6a-e27c-4fe9-aa2a-a7f2ace27f73"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "729792fc-9098-4f9f-9987-8e6533adfee6"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine EC2 with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "7c52bca4-c655-4569-98b8-b50cbcdb1d33"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "c4e98072-6ed7-4d9f-b814-ffec50e7cf8e"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "f0047863-64c3-4990-92f3-68bc7aea1ea2"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "875d656f-7fda-4d25-8524-24c2ace186ee"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine TRUSTED ADVISOR with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "d5584d0a-ea72-4a56-87ab-8119f98c97e5"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "5b7c8adc-7a87-4b3b-ba9f-59073bd02b76"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine EC2 with automated drift detection and repeatable deployment patterns."
+        },
+        {
+          "label": "F",
+          "text": "Keep a single shared account for all teams and depend on local administrator access to resolve governance exceptions on demand."
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D",
+        "F"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "multi-6",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "ebcd8b5a-3f5c-4443-a7a6-e3f9f20cd1af"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "bccfabfa-f07d-47f5-9cda-77326cea7064"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "fbdc8265-0d2d-46bf-bbdc-ba39ae3057a9"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "9d458a42-b603-4fe0-ba16-35618ca54a78"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "124dbd1f-da9b-40c5-8c29-5af7af346e00"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine APPLICATION MIGRATION SERVICE with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "9f668b54-a6f0-4f5e-aa55-7a11e85b3c5f"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "5b9c8410-9593-42cf-a290-a38cd63cd961"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-solutions-organizational-complexity while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including AWS, CONTROL TOWER. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use AWS with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CONTROL TOWER to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine AWS with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "design-solutions-organizational-complexity",
+      "services": [
+        "AWS",
+        "CONTROL TOWER"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as AWS, CONTROL TOWER help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-solutions-organizational-complexity domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/whitepapers/latest/",
+      "questionId": "33847c2b-7f42-411f-8872-591236d433fb"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area accelerate-workload-migration-modernization while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Migration Hub, MGN, APPLICATION MIGRATION SERVICE. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Migration Hub with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating MGN to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine APPLICATION MIGRATION SERVICE with automated drift detection and repeatable deployment patterns."
+        },
+        {
+          "label": "F",
+          "text": "Keep a single shared account for all teams and depend on local administrator access to resolve governance exceptions on demand."
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D",
+        "F"
+      ],
+      "domain": "accelerate-workload-migration-modernization",
+      "services": [
+        "Migration Hub",
+        "MGN",
+        "APPLICATION MIGRATION SERVICE"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Migration Hub, MGN, APPLICATION MIGRATION SERVICE help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the accelerate-workload-migration-modernization domain.",
+      "format": "multi-6",
+      "referenceUrl": "https://docs.aws.amazon.com/migrationhub/latest/ug/whatishub.html",
+      "questionId": "4f712b3c-6149-4c98-a75d-0b3ad8d9b8b7"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "9448d46e-a343-4b17-8d20-fdead2b289d2"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "7088eee1-21a3-4b4d-bf67-eb961bed99b1"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area continuous-improvement-existing-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Trusted Advisor, CloudWatch, TRUSTED ADVISOR. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Trusted Advisor with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating CloudWatch to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "domain": "continuous-improvement-existing-solutions",
+      "services": [
+        "Trusted Advisor",
+        "CloudWatch",
+        "TRUSTED ADVISOR"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Trusted Advisor, CloudWatch, TRUSTED ADVISOR help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the continuous-improvement-existing-solutions domain.",
+      "format": "single-4",
+      "referenceUrl": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+      "questionId": "12c0f422-97e3-4a43-a720-671564b33a69"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine EC2 with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "3fc581c3-78cc-4247-bf90-de4254801a22"
+    },
+    {
+      "stem": "A global enterprise is preparing for the SAP-C02 focus area design-new-solutions while consolidating multiple AWS accounts, legacy integrations, and strict operational controls across several Regions. The platform team must improve resilience, governance, and day-2 operations without introducing manual steps that would slow application delivery for dozens of product teams. Architecture decisions must align with AWS best practices referenced in the current documentation set, including Well-Architected, Organizations, EC2. Which solution should the solutions architect recommend to satisfy the requirements with the LEAST operational overhead?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use Well-Architected with centralized guardrails, automation, and monitoring so each workload inherits consistent controls and scalable operations."
+        },
+        {
+          "label": "B",
+          "text": "Deploy a custom management layer on self-managed virtual machines to coordinate all environments and manually approve every infrastructure change."
+        },
+        {
+          "label": "C",
+          "text": "Separate production and non-production boundaries while integrating Organizations to improve resilience, observability, and controlled delegation."
+        },
+        {
+          "label": "D",
+          "text": "Rely on weekly manual exports and ad hoc scripts without service-native policies, event-driven remediation, or centralized visibility."
+        },
+        {
+          "label": "E",
+          "text": "Adopt event-driven workflows that combine EC2 with automated drift detection and repeatable deployment patterns."
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "domain": "design-new-solutions",
+      "services": [
+        "Well-Architected",
+        "Organizations",
+        "EC2"
+      ],
+      "explanation": "The recommended answer emphasizes managed AWS capabilities and layered governance so the organization can scale securely with less manual effort. Services such as Well-Architected, Organizations, EC2 help standardize controls, automate operational tasks, and reduce risk compared with custom or manual approaches. AWS documentation consistently favors native automation, delegated administration, and service-integrated observability for architectures in the design-new-solutions domain.",
+      "format": "multi-5",
+      "referenceUrl": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "questionId": "dbcdae5f-fd41-4c89-94b0-191d21eb57bc"
+    }
+  ]
+}

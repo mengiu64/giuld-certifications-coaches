@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { ExamSummaryGrid } from '../components/ExamSummaryGrid';
 import { ProgressBar } from '../components/ProgressBar';
 import { QuestionCard } from '../components/QuestionCard';
 import { ResultsView } from '../components/ResultsView';
@@ -24,6 +25,7 @@ export function ExamSessionPage() {
   const [bank, setBank] = useState<QuestionBank | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [showSummary, setShowSummary] = useState(false);
   const exam = useExamSession(bank);
 
   useEffect(() => {
@@ -69,6 +71,23 @@ export function ExamSessionPage() {
   const totalQuestions = bank.questions.length;
   const isLastQuestion = currentPosition === totalQuestions;
 
+  if (showSummary) {
+    return (
+      <div style={pageStyle}>
+        <ExamSummaryGrid
+          bank={bank}
+          session={session}
+          onSelectQuestion={(position) => {
+            exam.setCurrentIndex(position);
+            setShowSummary(false);
+          }}
+          onBackToExam={() => setShowSummary(false)}
+          onSubmit={exam.submit}
+        />
+      </div>
+    );
+  }
+
   return (
     <div style={pageStyle}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
@@ -86,15 +105,21 @@ export function ExamSessionPage() {
       <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
         <Button disabled={exam.currentIndex === 0} style={{ background: '#4b5563' }} onClick={() => exam.setCurrentIndex(Math.max(0, exam.currentIndex - 1))}>Previous</Button>
         <div style={{ display: 'flex', gap: '1rem' }}>
+          <Button
+            style={{ background: '#f59e0b' }}
+            onClick={() => {
+              exam.pause();
+              navigate('/');
+            }}
+          >
+            Pause
+          </Button>
           <Button style={{ background: '#dc2626' }} onClick={exam.submit}>Submit exam</Button>
-          <Button onClick={() => isLastQuestion ? exam.submit() : exam.setCurrentIndex(exam.currentIndex + 1)}>
+          <Button onClick={() => isLastQuestion ? setShowSummary(true) : exam.setCurrentIndex(exam.currentIndex + 1)}>
             {isLastQuestion ? 'Finish' : 'Next'}
           </Button>
         </div>
       </div>
-      <Button style={{ background: '#7c3aed', justifySelf: 'start' }} onClick={() => navigate(`/review/${session.sessionId}`)}>
-        Open review workspace
-      </Button>
     </div>
   );
 }

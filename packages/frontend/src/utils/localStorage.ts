@@ -21,14 +21,57 @@ export const loadExamResult = (sessionId: string): ExamResult | null => {
   return stored ? deserializeExamResult(stored) : null;
 };
 
-export const setActiveSessionId = (sessionId: string): void => {
-  window.localStorage.setItem(LOCAL_STORAGE_KEYS.activeSession, sessionId);
+const getSessionIndex = (): string[] => {
+  const stored = window.localStorage.getItem(LOCAL_STORAGE_KEYS.sessionIndex);
+  if (!stored) {
+    return [];
+  }
+  try {
+    const parsed = JSON.parse(stored);
+    return Array.isArray(parsed) ? parsed.filter((id): id is string => typeof id === 'string') : [];
+  } catch {
+    return [];
+  }
 };
 
-export const getActiveSessionId = (): string | null => window.localStorage.getItem(LOCAL_STORAGE_KEYS.activeSession);
+const saveSessionIndex = (sessionIds: string[]): void => {
+  window.localStorage.setItem(LOCAL_STORAGE_KEYS.sessionIndex, JSON.stringify(sessionIds));
+};
 
-export const clearActiveSessionId = (): void => {
-  window.localStorage.removeItem(LOCAL_STORAGE_KEYS.activeSession);
+export const addSessionToIndex = (sessionId: string): void => {
+  const index = getSessionIndex();
+  if (!index.includes(sessionId)) {
+    saveSessionIndex([...index, sessionId]);
+  }
+};
+
+export const removeSessionFromIndex = (sessionId: string): void => {
+  const index = getSessionIndex();
+  saveSessionIndex(index.filter((id) => id !== sessionId));
+};
+
+export const getAllSessions = (): ExamSession[] => {
+  const index = getSessionIndex();
+  const sessions: ExamSession[] = [];
+  const staleIds: string[] = [];
+  for (const sessionId of index) {
+    const session = loadExamSession(sessionId);
+    if (session) {
+      sessions.push(session);
+    } else {
+      staleIds.push(sessionId);
+    }
+  }
+  if (staleIds.length > 0) {
+    saveSessionIndex(index.filter((id) => !staleIds.includes(id)));
+  }
+  return sessions;
+};
+
+export const deleteExamSession = (sessionId: string): void => {
+  window.localStorage.removeItem(sessionKey(sessionId));
+  window.localStorage.removeItem(resultKey(sessionId));
+  removeSessionFromIndex(sessionId);
 };
 
 export const setSelectedCertification = (certificationId: string): void => {

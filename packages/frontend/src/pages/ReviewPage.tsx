@@ -8,7 +8,7 @@ import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { apiClient } from '../services/api-client';
 import { loadExamResult, loadExamSession } from '../utils/localStorage';
 
-type Filter = 'all' | 'correct' | 'incorrect' | 'marked';
+type Filter = 'all' | 'correct' | 'incorrect' | 'incomplete' | 'marked';
 
 const pageStyle: React.CSSProperties = {
   maxWidth: '1100px',
@@ -55,13 +55,16 @@ export function ReviewPage() {
       const isCorrect = selectedAnswers.length === question.correctAnswers.length &&
         [...selectedAnswers].sort().every((answer, index) => answer === [...question.correctAnswers].sort()[index]);
       const marked = session.markedForReview.includes(questionIndex);
-      return { question, questionIndex, selectedAnswers, isCorrect, marked };
+      const isIncomplete = selectedAnswers.length < question.correctAnswers.length;
+      return { question, questionIndex, selectedAnswers, isCorrect, marked, isIncomplete };
     }).filter((item) => {
       switch (filter) {
         case 'correct':
           return item.isCorrect;
         case 'incorrect':
           return !item.isCorrect;
+        case 'incomplete':
+          return item.isIncomplete;
         case 'marked':
           return item.marked;
         default:
@@ -81,7 +84,7 @@ export function ReviewPage() {
     <div style={pageStyle}>
       {result ? <ResultsView result={result} /> : null}
       <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-        {(['all', 'correct', 'incorrect', 'marked'] as Filter[]).map((value) => (
+        {(['all', 'correct', 'incorrect', 'incomplete', 'marked'] as Filter[]).map((value) => (
           <Button
             key={value}
             style={{ background: filter === value ? '#2563eb' : '#6b7280' }}
@@ -92,13 +95,30 @@ export function ReviewPage() {
         ))}
       </div>
       {items.map((item) => (
-        <QuestionCard
-          key={item.question.questionId}
-          question={item.question}
-          selectedAnswers={item.selectedAnswers}
-          onChange={() => undefined}
-          showCorrectAnswers
-        />
+        <div key={item.question.questionId}>
+          {item.isIncomplete ? (
+            <div
+              style={{
+                background: '#fef2f2',
+                color: '#b91c1c',
+                border: '1px solid #fecaca',
+                borderRadius: '0.5rem 0.5rem 0 0',
+                padding: '0.5rem 1rem',
+                fontWeight: 600,
+              }}
+            >
+              {item.selectedAnswers.length === 0
+                ? `Not answered • ${item.question.correctAnswers.length} answer(s) required`
+                : `Incomplete answer • selected ${item.selectedAnswers.length} of ${item.question.correctAnswers.length} required`}
+            </div>
+          ) : null}
+          <QuestionCard
+            question={item.question}
+            selectedAnswers={item.selectedAnswers}
+            onChange={() => undefined}
+            showCorrectAnswers
+          />
+        </div>
       ))}
     </div>
   );

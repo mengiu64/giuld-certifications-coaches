@@ -31,6 +31,11 @@ export function QuestionCard({
         <div>
           <p style={{ color: '#6b7280', marginTop: 0, fontWeight: 700 }}>{question.domain}</p>
           <p style={{ lineHeight: 1.6 }}>{question.stem}</p>
+          <p style={{ color: '#2563eb', fontWeight: 600, fontSize: '0.9rem' }}>
+            {question.correctAnswers.length === 1
+              ? 'Select 1 answer'
+              : `Select ${question.correctAnswers.length} answers`}
+          </p>
         </div>
         {markForReview ? (
           <button

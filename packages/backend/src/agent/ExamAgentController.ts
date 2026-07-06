@@ -1,23 +1,19 @@
+import path from 'node:path';
 import { v4 as uuidv4 } from 'uuid';
 import {
   DEFAULT_CERTIFICATION_ID,
   FORMAT_OPTION_COUNT,
-  GENERATION_CHECKPOINT_INTERVAL,
   generationStatusSchema,
   type CertificationConfig,
   type CertificationRegistry,
   type GenerationCheckpoint,
+  type GenerationPlanItem,
   type GenerationStatus,
   type QuestionBank,
   type QuestionFormat,
 } from '@aws-exam-generator/shared';
 import { QuestionBankManager } from './QuestionBankManager.js';
 import { QuestionGenerator } from './QuestionGenerator.js';
-
-interface GenerationPlanItem {
-  domainId: string;
-  format: QuestionFormat;
-}
 
 const shuffle = <T>(values: T[]): T[] => {
   const next = [...values];
@@ -78,36 +74,56 @@ export class ExamAgentController {
       notFound.name = 'ValidationError';
       throw notFound;
     }
+
+    const checkpointPath = this.checkpointPathFor(certification.id);
+    const existingCheckpoint = await this.questionBankManager.readCheckpoint(checkpointPath);
+    const resuming = Boolean(
+      existingCheckpoint &&
+        existingCheckpoint.certificationId === certification.id &&
+        existingCheckpoint.questionCount < existingCheckpoint.plan.length,
+    );
+
     this.active = true;
-    const bankId = uuidv4();
+    const bankId = resuming && existingCheckpoint ? existingCheckpoint.bankId : uuidv4();
+    const generatedQuestions = resuming && existingCheckpoint ? existingCheckpoint.questionCount : 0;
     this.status = {
       state: 'running',
       certificationId: certification.id,
       bankId,
-      generatedQuestions: 0,
+      generatedQuestions,
       targetQuestions: certification.totalQuestions,
       startedAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      message: `Generating ${certification.totalQuestions} questions for ${certification.id}.`,
-      checkpointPath: this.checkpointPath,
+      message: resuming
+        ? `Resuming generation for ${certification.id} from checkpoint (${generatedQuestions}/${certification.totalQuestions} already generated).`
+        : `Generating ${certification.totalQuestions} questions for ${certification.id}.`,
+      checkpointPath,
+      resumedFromCheckpoint: resuming,
     };
-    void this.runGeneration(certification, bankId);
+    void this.runGeneration(certification, bankId, checkpointPath, resuming ? existingCheckpoint : null);
     return this.getStatus();
   }
 
-  private async runGeneration(certification: CertificationConfig, bankId: string): Promise<void> {
+  private async runGeneration(
+    certification: CertificationConfig,
+    bankId: string,
+    checkpointPath: string,
+    resumeFrom: GenerationCheckpoint | null,
+  ): Promise<void> {
     try {
-      const plan = this.buildPlan(certification);
+      const plan = resumeFrom?.plan ?? this.buildPlan(certification);
       const bank: QuestionBank = {
         bankId,
         certificationId: certification.id,
         certificationName: certification.displayName,
         examCode: certification.examCode,
-        createdAt: new Date().toISOString(),
-        questions: [],
+        createdAt: resumeFrom?.createdAt ?? new Date().toISOString(),
+        questions: resumeFrom ? [...resumeFrom.questions] : [],
       };
+      const startIndex = bank.questions.length;
 
-      for (const [index, item] of plan.entries()) {
+      for (let index = startIndex; index < plan.length; index += 1) {
+        const item = plan[index]!;
         const question = await this.questionGenerator.generateQuestion(certification, item.domainId, item.format);
         bank.questions.push(question);
         this.status = {
@@ -116,21 +132,22 @@ export class ExamAgentController {
           updatedAt: new Date().toISOString(),
           message: `Generated ${index + 1}/${plan.length} questions for ${certification.id}.`,
         };
-        if ((index + 1) % GENERATION_CHECKPOINT_INTERVAL === 0) {
-          const checkpoint: GenerationCheckpoint = {
-            certificationId: certification.id,
-            bankId,
-            createdAt: bank.createdAt,
-            questionCount: bank.questions.length,
-            questions: bank.questions,
-            updatedAt: new Date().toISOString(),
-          };
-          await this.questionBankManager.writeCheckpoint(this.checkpointPath, checkpoint);
-        }
+        // Checkpoint after every question so no generated question is lost if the
+        // process is interrupted (crash, restart, network failure, etc.).
+        const checkpoint: GenerationCheckpoint = {
+          certificationId: certification.id,
+          bankId,
+          createdAt: bank.createdAt,
+          questionCount: bank.questions.length,
+          questions: bank.questions,
+          plan,
+          updatedAt: new Date().toISOString(),
+        };
+        await this.questionBankManager.writeCheckpoint(checkpointPath, checkpoint);
       }
 
       await this.questionBankManager.saveQuestionBank(bank);
-      await this.questionBankManager.clearCheckpoint(this.checkpointPath);
+      await this.questionBankManager.clearCheckpoint(checkpointPath);
       this.status = {
         state: 'completed',
         certificationId: certification.id,
@@ -152,6 +169,12 @@ export class ExamAgentController {
     } finally {
       this.active = false;
     }
+  }
+
+  private checkpointPathFor(certificationId: string): string {
+    const parsed = path.parse(this.checkpointPath);
+    const safeCertId = certificationId.replace(/[^a-zA-Z0-9_-]/g, '_');
+    return path.join(parsed.dir, `${parsed.name}-${safeCertId}${parsed.ext}`);
   }
 
   private buildPlan(certification: CertificationConfig): GenerationPlanItem[] {

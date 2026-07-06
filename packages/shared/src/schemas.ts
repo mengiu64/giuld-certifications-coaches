@@ -118,6 +118,12 @@ export const generationStatusSchema = z.object({
   lastError: z.string().optional(),
   message: z.string().min(1),
   checkpointPath: z.string().optional(),
+  resumedFromCheckpoint: z.boolean().optional(),
+});
+
+export const generationPlanItemSchema = z.object({
+  domainId: z.string().min(1),
+  format: questionFormatSchema,
 });
 
 export const generationCheckpointSchema = z.object({
@@ -126,5 +132,6 @@ export const generationCheckpointSchema = z.object({
   createdAt: z.string().datetime(),
   questionCount: z.number().int().min(0),
   questions: z.array(questionSchema),
+  plan: z.array(generationPlanItemSchema),
   updatedAt: z.string().datetime(),
 });

@@ -1,6 +1,15 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { ExamResult, ExamSession, QuestionBank } from '@aws-exam-generator/shared';
-import { answerQuestion, initializeSession, persistSession, submitSession, toggleReviewMark } from '../store/examStore';
+import {
+  answerQuestion,
+  getResumeQuestionOrderIndex,
+  initializeSession,
+  pauseSession,
+  resumeSession,
+  persistSession,
+  submitSession,
+  toggleReviewMark,
+} from '../store/examStore';
 
 export const useExamSession = (bank: QuestionBank | null) => {
   const [session, setSession] = useState<ExamSession | null>(null);
@@ -12,7 +21,9 @@ export const useExamSession = (bank: QuestionBank | null) => {
       return;
     }
     const initialized = initializeSession(bank, 'exam');
-    setSession(initialized);
+    const resumed = initialized.status === 'paused' ? resumeSession(initialized) : initialized;
+    setSession(resumed);
+    setCurrentIndex(getResumeQuestionOrderIndex(resumed));
   }, [bank]);
 
   useEffect(() => {
@@ -77,6 +88,12 @@ export const useExamSession = (bank: QuestionBank | null) => {
       const submitted = submitSession(session, bank);
       setSession(submitted.session);
       setResult(submitted.result);
+    },
+    pause: () => {
+      if (!session) {
+        return;
+      }
+      setSession(pauseSession(session));
     },
   };
 };

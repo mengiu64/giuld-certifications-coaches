@@ -121,6 +121,12 @@ export interface GenerationStatus {
   lastError?: string | undefined;
   message: string;
   checkpointPath?: string | undefined;
+  resumedFromCheckpoint?: boolean | undefined;
+}
+
+export interface GenerationPlanItem {
+  domainId: string;
+  format: QuestionFormat;
 }
 
 export interface GenerationCheckpoint {
@@ -129,5 +135,6 @@ export interface GenerationCheckpoint {
   createdAt: string;
   questionCount: number;
   questions: Question[];
+  plan: GenerationPlanItem[];
   updatedAt: string;
 }

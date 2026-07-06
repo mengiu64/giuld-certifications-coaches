@@ -17,7 +17,7 @@ export const DEFAULT_FRONTEND_PORT = 5173;
 export const QUESTION_BANKS_DIR = 'data/question-banks';
 export const CHECKPOINT_FILE_NAME = 'generation-checkpoint.json';
 export const LOCAL_STORAGE_KEYS = {
-  activeSession: 'active_session',
+  sessionIndex: 'session_index',
   selectedCertification: 'selected_certification',
   examSessionPrefix: 'exam_session_',
   examResultPrefix: 'exam_result_',

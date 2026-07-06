@@ -1,9 +1,24 @@
 import { BedrockRuntimeClient, ConverseCommand, ConverseStreamCommand } from '@aws-sdk/client-bedrock-runtime';
 import { fromNodeProviderChain, fromSSO } from '@aws-sdk/credential-providers';
+import { NodeHttpHandler } from '@smithy/node-http-handler';
 import { BEDROCK_RETRY_DELAYS_MS } from '@aws-exam-generator/shared';
 import type { ConverseCommandInput } from '@aws-sdk/client-bedrock-runtime';
 
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
+
+// A hard upper bound on any single Bedrock call (including credential resolution), so that an
+// unreachable endpoint, a stuck SSO/credential provider, or a silently dropped connection cannot
+// hang question generation forever - it always surfaces as an error the caller can retry or fall
+// back on.
+const BEDROCK_CALL_TIMEOUT_MS = 20_000;
+
+const withTimeout = <T>(operation: () => Promise<T>, timeoutMs: number, label: string): Promise<T> =>
+  Promise.race([
+    operation(),
+    new Promise<T>((_, reject) => {
+      setTimeout(() => reject(new Error(`${label} timed out after ${timeoutMs}ms`)), timeoutMs);
+    }),
+  ]);
 
 const buildCredentials = (profile?: string) => (profile ? fromSSO({ profile }) : fromNodeProviderChain());
 
@@ -21,6 +36,10 @@ export class BedrockClient {
     this.client = new BedrockRuntimeClient({
       region,
       credentials: buildCredentials(profile),
+      requestHandler: new NodeHttpHandler({
+        connectionTimeout: 5_000,
+        socketTimeout: BEDROCK_CALL_TIMEOUT_MS,
+      }),
     });
   }
 
@@ -73,7 +92,7 @@ export class BedrockClient {
     let lastError: unknown;
     for (let attempt = 0; attempt <= BEDROCK_RETRY_DELAYS_MS.length; attempt += 1) {
       try {
-        return await operation();
+        return await withTimeout(operation, BEDROCK_CALL_TIMEOUT_MS, 'Bedrock request');
       } catch (error) {
         lastError = error;
         if (!isThrottlingError(error) || attempt === BEDROCK_RETRY_DELAYS_MS.length) {

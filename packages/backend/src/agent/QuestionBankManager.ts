@@ -112,6 +112,15 @@ export class QuestionBankManager {
     await this.atomicWrite(checkpointPath, JSON.stringify(parsed, null, 2));
   }
 
+  async readCheckpoint(checkpointPath: string): Promise<GenerationCheckpoint | null> {
+    try {
+      const raw = await fs.readFile(checkpointPath, 'utf-8');
+      return generationCheckpointSchema.parse(JSON.parse(raw));
+    } catch {
+      return null;
+    }
+  }
+
   async clearCheckpoint(checkpointPath: string): Promise<void> {
     await fs.rm(checkpointPath, { force: true });
   }

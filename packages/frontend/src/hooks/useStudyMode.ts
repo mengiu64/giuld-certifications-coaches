@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { ExamSession, QuestionBank } from '@aws-exam-generator/shared';
-import { initializeSession, saveStudyAnswer } from '../store/examStore';
+import { checkStudyAnswer, getResumeQuestionOrderIndex, initializeSession, pauseSession, resumeSession, saveStudyAnswer } from '../store/examStore';
 
 export const useStudyMode = (bank: QuestionBank | null) => {
   const [session, setSession] = useState<ExamSession | null>(null);
@@ -10,7 +10,10 @@ export const useStudyMode = (bank: QuestionBank | null) => {
     if (!bank) {
       return;
     }
-    setSession(initializeSession(bank, 'study'));
+    const initialized = initializeSession(bank, 'study');
+    const resumed = initialized.status === 'paused' ? resumeSession(initialized) : initialized;
+    setSession(resumed);
+    setCurrentIndex(getResumeQuestionOrderIndex(resumed));
   }, [bank]);
 
   const currentQuestion = useMemo(() => {
@@ -30,10 +33,22 @@ export const useStudyMode = (bank: QuestionBank | null) => {
     currentQuestion,
     setCurrentIndex,
     answerQuestion: (questionIndex: number, answers: string[]) => {
+      if (!session) {
+        return;
+      }
+      setSession(saveStudyAnswer(session, questionIndex, answers));
+    },
+    checkAnswer: (questionIndex: number) => {
       if (!session || !bank) {
         return;
       }
-      setSession(saveStudyAnswer(session, bank, questionIndex, answers));
+      setSession(checkStudyAnswer(session, bank, questionIndex));
+    },
+    pause: () => {
+      if (!session) {
+        return;
+      }
+      setSession(pauseSession(session));
     },
   };
 };
