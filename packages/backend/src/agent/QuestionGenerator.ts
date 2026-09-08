@@ -283,9 +283,9 @@ Generate a realistic, scenario-based question following these rules:
 - For multi-5: 5 options, exactly 2-3 correct
 - For multi-6: 6 options, exactly 2-3 correct
 - Each option min 10 words
-- Explanation: 50-300 words, mention at least 1 AWS service
+- Explanation: 50-300 words, MUST explicitly mention at least ONE AWS service from the "services" array you include in your response
 - Domain tag: one of ${certification.domains.map((domain) => domain.id).join(', ')}
-- Services: 1-3 AWS services most relevant
+- Services: 1-3 AWS services (each must be explicitly named in the explanation)
 
 Respond ONLY with valid JSON matching this schema:
 {
@@ -335,9 +335,9 @@ Generate a realistic, scenario-based question following these rules:
 - For multi-5: 5 options, exactly 2-3 correct
 - For multi-6: 6 options, exactly 2-3 correct
 - Each option min 10 words
-- Explanation: 50-300 words, mention at least 1 AWS AI service
+- Explanation: 50-300 words, MUST explicitly mention at least ONE AWS service from the "services" array you include in your response
 - Domain tag: one of ${certification.domains.map((domain) => domain.id).join(', ')}
-- Services: 1-3 AWS services, at least one from: ${AI_TOPIC_SERVICES.join(', ')}
+- Services: 1-3 AWS services (each must be explicitly named in the explanation), at least one from: ${AI_TOPIC_SERVICES.join(', ')}
 
 Respond ONLY with valid JSON matching this schema:
 {
