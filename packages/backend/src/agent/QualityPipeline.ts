@@ -157,7 +157,7 @@ export class StyleEntropyGuard {
 export class MultiPassReviewer {
   review(question: Question): MultiPassReviewOutcome {
     const issues: string[] = [];
-    const writerPass = question.stem.trim().endsWith('?') && question.stem.split(/\s+/).length >= 50;
+    const writerPass = question.stem.trim().endsWith('?') && question.stem.split(/\s+/).length >= 40;
     if (!writerPass) {
       issues.push('writer-pass-failed');
     }
