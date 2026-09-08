@@ -88,7 +88,7 @@ export const generatedQuestionDraftSchema = z.object({
   options: z.array(questionOptionSchema).min(4).max(6),
   correctAnswers: z.array(z.string().min(1)).min(1).max(3),
   domain: z.string().min(1),
-  services: z.array(z.string().min(2)).min(1).max(3),
+  services: z.array(z.string().min(2)).min(1).max(5),
   explanation: z.string().min(50).max(3000),
   format: questionFormatSchema,
   referenceUrl: z.string().url().optional(),
