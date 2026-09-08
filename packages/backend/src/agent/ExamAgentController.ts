@@ -120,10 +120,11 @@ export class ExamAgentController {
     checkpointPath: string,
     resumeFrom: GenerationCheckpoint | null,
   ): Promise<void> {
+    let bank: QuestionBank | null = null;
     try {
       const plan = resumeFrom?.plan ?? this.buildPlan(certification);
       const historyCorpus = await this.questionBankManager.getAllQuestionsForCertification(certification.id);
-      const bank: QuestionBank = {
+      bank = {
         bankId,
         certificationId: certification.id,
         certificationName: certification.displayName,
@@ -180,7 +181,8 @@ export class ExamAgentController {
       };
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : String(error);
-      console.error(`[ExamAgentController] Generation FAILED at index ${bank.questions.length}: ${errorMsg}`);
+      const qCount = bank?.questions.length ?? 0;
+      console.error(`[ExamAgentController] Generation FAILED at question ${qCount}: ${errorMsg}`);
       console.error(`[ExamAgentController] Error stack:`, error instanceof Error ? error.stack : '(no stack)');
       this.status = {
         ...this.status,
@@ -238,7 +240,7 @@ export class ExamAgentController {
       console.warn(`[ExamAgentController] Quality gate rejected at attempt ${attempts}/${this.qualityPipeline.maxRetries()}: gate=${lastDecision?.gateId}, reason=${lastDecision?.reasonCode}`);
       console.debug(`[ExamAgentController] Rejected question domain=${item.domainId}, decisions count=${evaluated.decisions.length}`);
       for (const decision of evaluated.decisions) {
-        console.debug(`  - ${decision.gateId}: ${decision.reasonCode} (score=${decision.score})`);
+        console.debug(`  - ${decision.gateId}: ${decision.reasonCode} (result=${decision.result})`);
       }
     }
 
