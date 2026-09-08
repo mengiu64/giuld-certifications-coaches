@@ -179,11 +179,14 @@ export class ExamAgentController {
         reviewFlag: qualityKpis.reviewFlag,
       };
     } catch (error) {
+      const errorMsg = error instanceof Error ? error.message : String(error);
+      console.error(`[ExamAgentController] Generation FAILED at index ${bank.questions.length}: ${errorMsg}`);
+      console.error(`[ExamAgentController] Error stack:`, error instanceof Error ? error.stack : '(no stack)');
       this.status = {
         ...this.status,
         state: 'failed',
         updatedAt: new Date().toISOString(),
-        lastError: error instanceof Error ? error.message : String(error),
+        lastError: errorMsg,
         message: 'Generation failed.',
       };
     } finally {
@@ -222,6 +225,7 @@ export class ExamAgentController {
       noveltyRejects += countNoveltyRejects(evaluated.decisions);
 
       if (evaluated.accepted) {
+        console.info(`[ExamAgentController] Quality gates passed after ${attempts} attempt(s)`);
         return {
           question: evaluated.question,
           attempts,
@@ -231,6 +235,11 @@ export class ExamAgentController {
 
       const lastDecision = evaluated.decisions[evaluated.decisions.length - 1];
       lastError = `${lastDecision?.gateId ?? 'quality-gate'}:${lastDecision?.reasonCode ?? 'rejected'}`;
+      console.warn(`[ExamAgentController] Quality gate rejected at attempt ${attempts}/${this.qualityPipeline.maxRetries()}: gate=${lastDecision?.gateId}, reason=${lastDecision?.reasonCode}`);
+      console.debug(`[ExamAgentController] Rejected question domain=${item.domainId}, decisions count=${evaluated.decisions.length}`);
+      for (const decision of evaluated.decisions) {
+        console.debug(`  - ${decision.gateId}: ${decision.reasonCode} (score=${decision.score})`);
+      }
     }
 
     throw new Error(
