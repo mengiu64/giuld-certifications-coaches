@@ -6,7 +6,8 @@
     "packages/shared",
     "packages/mcp-server",
     "packages/backend",
-    "packages/frontend"
+    "packages/frontend",
+    "packages/aws-cloud"
   ],
   "scripts": {
     "build": "npm run build --workspaces",

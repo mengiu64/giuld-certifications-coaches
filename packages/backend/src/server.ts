@@ -5,6 +5,7 @@ import { ExamAgentController } from './agent/ExamAgentController.js';
 import { QuestionBankManager } from './agent/QuestionBankManager.js';
 import { QuestionGenerator } from './agent/QuestionGenerator.js';
 import { env } from './config/env.js';
+import { TopicConfigLoader } from './config/topic-config-loader.js';
 import { McpClient } from './mcp/McpClient.js';
 import { BedrockClient } from './services/BedrockClient.js';
 import { certificationRegistry } from '@aws-exam-generator/shared';
@@ -31,6 +32,9 @@ export const createApp = () => {
 
   return { app, mcpClient };
 };
+
+// Carica la configurazione dei topic AI dal file YAML prima di avviare l'app
+TopicConfigLoader.load(env.topicConfigPath, certificationRegistry);
 
 const { app, mcpClient } = createApp();
 const server = app.listen(env.backendPort, () => {

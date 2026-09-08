@@ -93,6 +93,12 @@ export interface CertificationConfig {
   };
   totalQuestions: number;
   timeLimitMinutes: number;
+  /**
+   * Distribuzione opzionale dei topic per la certificazione.
+   * Mappa ogni identificatore di topic alla percentuale di domande da riservare.
+   * Es. { "generative-ai": 34 } riserva il 34% delle domande al topic AI generativa.
+   */
+  topicDistribution?: Record<string, number>;
 }
 
 export interface CertificationRegistry {
@@ -127,6 +133,12 @@ export interface GenerationStatus {
 export interface GenerationPlanItem {
   domainId: string;
   format: QuestionFormat;
+  /**
+   * Topic opzionale assegnato a questo elemento del piano di generazione.
+   * Se presente, la domanda generata dovrà rispettare i vincoli del topic indicato
+   * (es. "generative-ai" richiede riferimenti a servizi AWS di AI generativa).
+   */
+  topic?: string | undefined;
 }
 
 export interface GenerationCheckpoint {

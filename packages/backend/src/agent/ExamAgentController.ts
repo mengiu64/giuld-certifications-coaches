@@ -75,6 +75,13 @@ export class ExamAgentController {
       throw notFound;
     }
 
+    // Logga la configurazione di distribuzione topic se presente nella certificazione
+    if (certification.topicDistribution) {
+      console.info(
+        `[ExamAgentController] Topic distribution loaded for ${certification.id}: ${JSON.stringify(certification.topicDistribution)}`,
+      );
+    }
+
     const checkpointPath = this.checkpointPathFor(certification.id);
     const existingCheckpoint = await this.questionBankManager.readCheckpoint(checkpointPath);
     const resuming = Boolean(
@@ -124,7 +131,8 @@ export class ExamAgentController {
 
       for (let index = startIndex; index < plan.length; index += 1) {
         const item = plan[index]!;
-        const question = await this.questionGenerator.generateQuestion(certification, item.domainId, item.format);
+        // Passa il topic opzionale al generatore per attivare la logica AI-topic quando presente
+        const question = await this.questionGenerator.generateQuestion(certification, item.domainId, item.format, item.topic);
         bank.questions.push(question);
         this.status = {
           ...this.status,
@@ -198,9 +206,90 @@ export class ExamAgentController {
     );
     const shuffledDomains = shuffle(domainQueue);
     const shuffledFormats = shuffle(formatQueue);
-    return Array.from({ length: certification.totalQuestions }, (_, index) => ({
+    // Costruzione del piano con dominio e formato assegnati
+    const plan: GenerationPlanItem[] = Array.from({ length: certification.totalQuestions }, (_, index) => ({
       domainId: shuffledDomains[index] ?? certification.domains[0]!.id,
       format: shuffledFormats[index] ?? (FORMAT_OPTION_COUNT['single-4'] ? 'single-4' : 'multi-5'),
     }));
+
+    // Assegnazione dei tag di topic al piano (no-op se topicDistribution è assente)
+    this.assignTopicTags(plan, certification);
+
+    return plan;
+  }
+
+  /**
+   * Assegna i tag di topic agli elementi del piano di generazione, distribuendo
+   * ciascun topic proporzionalmente ai pesi dei domini tramite allocazione
+   * largest-remainder (metodo di Hamilton).
+   *
+   * @param plan - Array di elementi del piano da mutare in-place aggiungendo il campo `topic`.
+   * @param certification - Configurazione della certificazione contenente `topicDistribution` e `domains`.
+   * @returns void — il piano viene modificato in-place.
+   */
+  private assignTopicTags(plan: GenerationPlanItem[], certification: CertificationConfig): void {
+    // Se non è definita una distribuzione di topic, non assegnare alcun tag
+    if (!certification.topicDistribution || Object.keys(certification.topicDistribution).length === 0) {
+      return;
+    }
+
+    // Calcola il numero totale di elementi per ciascun topic tramite largest-remainder
+    const topicWeights = Object.entries(certification.topicDistribution).map(([topic, percentage]) => ({
+      key: topic,
+      weight: percentage,
+    }));
+    const topicCounts = distributeCounts(topicWeights, certification.totalQuestions);
+
+    // Prepara i pesi dei domini per la distribuzione intra-topic
+    const domainWeights = certification.domains.map((domain) => ({
+      key: domain.id,
+      weight: domain.percentage,
+    }));
+
+    // Per ciascun topic, distribuisci il suo conteggio tra i domini proporzionalmente
+    // ai pesi di ciascun dominio (largest-remainder per dominio)
+    const domainTopicCounts = new Map<string, Map<string, number>>();
+    for (const [topic, count] of topicCounts) {
+      // Allocazione del topic corrente tra i domini usando largest-remainder
+      const perDomain = distributeCounts(domainWeights, count);
+      domainTopicCounts.set(topic, perDomain);
+    }
+
+    // Logga il conteggio per topic e la ripartizione per dominio dopo la costruzione del piano
+    console.info(
+      `[ExamAgentController] Topic allocation for ${certification.id}: ${JSON.stringify(Object.fromEntries(topicCounts))}`,
+    );
+    // Logga la ripartizione dettagliata per dominio di ciascun topic
+    const perDomainBreakdown: Record<string, Record<string, number>> = {};
+    for (const [topic, perDomain] of domainTopicCounts) {
+      perDomainBreakdown[topic] = Object.fromEntries(perDomain);
+    }
+    console.info(
+      `[ExamAgentController] Per-domain topic breakdown for ${certification.id}: ${JSON.stringify(perDomainBreakdown)}`,
+    );
+
+    // Raggruppa gli indici degli elementi del piano per dominio
+    const domainItemIndices = new Map<string, number[]>();
+    for (let i = 0; i < plan.length; i++) {
+      const item = plan[i]!;
+      const indices = domainItemIndices.get(item.domainId) ?? [];
+      indices.push(i);
+      domainItemIndices.set(item.domainId, indices);
+    }
+
+    // Per ciascun dominio, assegna i tag di topic ai primi N elementi,
+    // dove N è la quota di quel topic assegnata al dominio corrente.
+    // L'assegnazione avviene in ordine di topic per garantire determinismo.
+    for (const [domainId, indices] of domainItemIndices) {
+      let offset = 0;
+      for (const [topic, perDomain] of domainTopicCounts) {
+        const countForDomain = perDomain.get(domainId) ?? 0;
+        // Assegna il topic ai prossimi `countForDomain` elementi di questo dominio
+        for (let j = 0; j < countForDomain && offset + j < indices.length; j++) {
+          plan[indices[offset + j]!]!.topic = topic;
+        }
+        offset += countForDomain;
+      }
+    }
   }
 }

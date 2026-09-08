@@ -1,0 +1,9 @@
+# Configurazione della distribuzione dei topic AI per certificazione.
+# Ogni voce associa un ID certificazione a una mappa topic -> percentuale.
+# Se una certificazione non è presente, viene applicato il default del 34%.
+
+topicDistribution:
+  SAA-C03:
+    generative-ai: 34
+  SAP-C02:
+    generative-ai: 34

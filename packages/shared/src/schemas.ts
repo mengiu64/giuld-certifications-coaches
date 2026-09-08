@@ -87,6 +87,22 @@ export const certificationConfigSchema = z.object({
   }),
   totalQuestions: z.number().int().positive(),
   timeLimitMinutes: z.number().int().positive(),
+  /**
+   * Distribuzione opzionale dei topic per la certificazione.
+   * Mappa ogni identificatore di topic (chiave: 1-64 caratteri, pattern [a-z0-9-]+)
+   * alla percentuale intera (1-100) di domande da riservare.
+   * Vincoli: massimo 10 entry, somma dei valori ≤ 100.
+   */
+  topicDistribution: z.record(
+    z.string().min(1).max(64).regex(/^[a-z0-9-]+$/),
+    z.number().int().min(1).max(100)
+  ).refine(
+    (dist) => Object.keys(dist).length <= 10,
+    { message: 'Maximum 10 topic entries allowed' }
+  ).refine(
+    (dist) => Object.values(dist).reduce((a, b) => a + b, 0) <= 100,
+    { message: 'Topic percentages exceed the allowed total of 100' }
+  ).optional(),
 });
 
 export const questionBankSummarySchema = z.object({
@@ -124,6 +140,12 @@ export const generationStatusSchema = z.object({
 export const generationPlanItemSchema = z.object({
   domainId: z.string().min(1),
   format: questionFormatSchema,
+  /**
+   * Topic opzionale assegnato all'elemento del piano.
+   * Se presente, indica che la domanda generata deve rispettare i vincoli del topic
+   * (es. "generative-ai" richiede servizi AWS di AI generativa).
+   */
+  topic: z.string().min(1).optional(),
 });
 
 export const generationCheckpointSchema = z.object({
@@ -135,3 +157,55 @@ export const generationCheckpointSchema = z.object({
   plan: z.array(generationPlanItemSchema),
   updatedAt: z.string().datetime(),
 });
+
+/**
+ * Schema di validazione per l'analisi di una singola opzione di risposta.
+ * Utilizzato all'interno dell'Enhanced Study Response per descrivere
+ * perché ciascuna opzione è corretta o incorretta.
+ */
+export const optionAnalysisItemSchema = z.object({
+  /** Etichetta dell'opzione (A, B, C, D, E, F) — singolo carattere */
+  label: z.string().min(1).max(1),
+  /** Testo completo dell'opzione di risposta */
+  text: z.string().min(10),
+  /** Indica se questa opzione è una risposta corretta */
+  isCorrect: z.boolean(),
+  /** Spiegazione del perché l'opzione è corretta o incorretta (20-1000 caratteri) */
+  explanation: z.string().min(20).max(1000),
+});
+
+/**
+ * Schema di validazione per la risposta arricchita in modalità studio.
+ * Valida tutti i campi dell'Enhanced Study Response restituita al client
+ * dopo la verifica di una risposta in study mode.
+ */
+export const enhancedStudyResponseSchema = z.object({
+  /** Indica se la risposta dell'utente è corretta */
+  isCorrect: z.boolean(),
+  /** Spiegazione base della risposta (50-3000 caratteri) */
+  explanation: z.string().min(50).max(3000),
+  /** Spiegazione dettagliata generata da Bedrock (100-5000 caratteri) */
+  detailedExplanation: z.string().min(100).max(5000),
+  /** Analisi dettagliata per ciascuna opzione della domanda (4-6 elementi) */
+  optionAnalysis: z.array(optionAnalysisItemSchema).min(4).max(6),
+  /**
+   * Diagramma Mermaid opzionale (null se non applicabile o generazione fallita).
+   * Deve iniziare con una keyword Mermaid valida: graph, sequenceDiagram, flowchart, architecture.
+   */
+  diagram: z.string()
+    .refine(
+      (s) => /^(graph|sequenceDiagram|flowchart|architecture)\b/.test(s.trim()),
+      { message: 'Il diagramma deve iniziare con una keyword Mermaid valida' }
+    )
+    .nullable(),
+  /** Array dei servizi AWS coinvolti nella domanda (minimo 1 elemento) */
+  services: z.array(z.string().min(2)).min(1),
+  /** URL di riferimento alla documentazione AWS (opzionale) */
+  referenceUrl: z.string().url().optional(),
+});
+
+/** Tipo TypeScript inferito dallo schema di analisi di una singola opzione */
+export type OptionAnalysisItem = z.infer<typeof optionAnalysisItemSchema>;
+
+/** Tipo TypeScript inferito dallo schema della risposta arricchita in modalità studio */
+export type EnhancedStudyResponse = z.infer<typeof enhancedStudyResponseSchema>;

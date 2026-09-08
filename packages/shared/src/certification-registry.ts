@@ -1,4 +1,5 @@
 import type { CertificationConfig, CertificationLevel, CertificationRegistry as CertificationRegistryContract } from './types.js';
+import { DEFAULT_AI_TOPIC_PERCENTAGE } from './constants.js';
 
 const COMMON_FORMAT_DISTRIBUTION = {
   singleAnswer4Options: 70,
@@ -15,6 +16,8 @@ const CERTIFICATIONS: CertificationConfig[] = [
     totalQuestions: 75,
     timeLimitMinutes: 180,
     formatDistribution: { ...COMMON_FORMAT_DISTRIBUTION },
+    // Distribuzione topic: percentuale di default per l'AI generativa
+    topicDistribution: { 'generative-ai': DEFAULT_AI_TOPIC_PERCENTAGE },
     domains: [
       { id: 'design-solutions-organizational-complexity', name: 'Design Solutions for Organizational Complexity', percentage: 26 },
       { id: 'design-new-solutions', name: 'Design New Solutions', percentage: 29 },
@@ -30,6 +33,8 @@ const CERTIFICATIONS: CertificationConfig[] = [
     totalQuestions: 65,
     timeLimitMinutes: 130,
     formatDistribution: { ...COMMON_FORMAT_DISTRIBUTION },
+    // Distribuzione topic: percentuale di default per l'AI generativa
+    topicDistribution: { 'generative-ai': DEFAULT_AI_TOPIC_PERCENTAGE },
     domains: [
       { id: 'design-secure-architectures', name: 'Design Secure Architectures', percentage: 30 },
       { id: 'design-resilient-architectures', name: 'Design Resilient Architectures', percentage: 26 },
@@ -135,6 +140,20 @@ export class CertificationRegistryImpl implements CertificationRegistryContract 
 
   getByLevel(level: CertificationLevel): CertificationConfig[] {
     return CERTIFICATIONS.filter((config) => config.level === level);
+  }
+
+  /**
+   * Applica override esterni alla topicDistribution delle certificazioni registrate.
+   * Solo le certificazioni già presenti nel registry vengono aggiornate;
+   * gli ID sconosciuti vengono ignorati silenziosamente.
+   */
+  applyTopicOverrides(overrides: Record<string, Record<string, number>>): void {
+    for (const [certId, topics] of Object.entries(overrides)) {
+      const config = this.byId.get(certId);
+      if (config) {
+        config.topicDistribution = { ...config.topicDistribution, ...topics };
+      }
+    }
   }
 }
 

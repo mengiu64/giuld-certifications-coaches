@@ -23,3 +23,22 @@ export const LOCAL_STORAGE_KEYS = {
   examResultPrefix: 'exam_result_',
 } as const;
 export const EXAM_STATE_MACHINE = ['IDLE', 'GENERATING', 'READY', 'IN_PROGRESS', 'SUBMITTED', 'RESULTS'] as const;
+
+/**
+ * Percentuale di default per il topic AI generativa nelle certificazioni.
+ * Utilizzata come fallback quando il file YAML non specifica un valore.
+ */
+export const DEFAULT_AI_TOPIC_PERCENTAGE = 34;
+
+/**
+ * Elenco dei servizi AWS classificati come AI/Generative AI.
+ * Utilizzato per validazione, prompt e costruzione mock delle domande a tema AI.
+ */
+export const AI_TOPIC_SERVICES: readonly string[] = [
+  'Amazon Bedrock',
+  'Amazon Q',
+  'PartyRock',
+  'SageMaker JumpStart',
+  'Amazon CodeWhisperer',
+  'Amazon Titan',
+] as const;

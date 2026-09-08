@@ -11,6 +11,8 @@ const repositoryRoot = path.resolve(packageRoot, '../..');
 const questionBanksDir = path.resolve(repositoryRoot, QUESTION_BANKS_DIR);
 const checkpointFilePath = path.join(questionBanksDir, CHECKPOINT_FILE_NAME);
 const mcpServerEntrypoint = path.resolve(repositoryRoot, 'packages/mcp-server/dist/server.js');
+// Percorso al file di configurazione YAML per la distribuzione dei topic AI
+const topicConfigPath = path.resolve(repositoryRoot, 'data/ai-topic-config.yaml');
 
 const parsePort = (value: string | undefined, fallback: number): number => {
   const parsed = Number(value);
@@ -26,6 +28,7 @@ export const env = {
   questionBanksDir,
   checkpointFilePath,
   repositoryRoot,
+  topicConfigPath,
   mcpServerCommand: process.execPath,
   mcpServerArgs: [mcpServerEntrypoint],
 } as const;
