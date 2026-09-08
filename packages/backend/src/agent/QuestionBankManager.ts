@@ -72,6 +72,22 @@ export class QuestionBankManager {
     return banks.sort((left, right) => right.createdAt.localeCompare(left.createdAt))[0] ?? null;
   }
 
+  async getAllQuestionsForCertification(certificationId: string): Promise<Question[]> {
+    const directoryPath = path.join(this.dataDir, certificationId);
+    const files = await fs.readdir(directoryPath).catch(() => []);
+    const banks = await Promise.all(
+      files
+        .filter((candidate) => candidate.endsWith('.json'))
+        .map(async (file) => {
+          const raw = await fs.readFile(path.join(directoryPath, file), 'utf-8');
+          return questionBankSchema.parse(JSON.parse(raw));
+        }),
+    );
+    return banks
+      .sort((left, right) => left.createdAt.localeCompare(right.createdAt))
+      .flatMap((bank) => bank.questions);
+  }
+
   async getLatestQuestions(certificationId: string): Promise<Question[]> {
     const bank = await this.getLatestBank(certificationId);
     return bank?.questions ?? [];

@@ -12,6 +12,7 @@ import { aiServicesArrayArbitrary, certificationConfigWithTopicsArbitrary, gener
 import { ExamAgentController } from '../agent/ExamAgentController.js';
 import { QuestionGenerator } from '../agent/QuestionGenerator.js';
 import { QuestionBankManager } from '../agent/QuestionBankManager.js';
+import { QualityPipeline } from '../agent/QualityPipeline.js';
 
 // --- Mock delle dipendenze per istanziare ExamAgentController ---
 
@@ -33,6 +34,13 @@ const createController = (): ExamAgentController =>
     mockQuestionBankManager,
     mockCertificationRegistry,
     '/tmp/test-checkpoint.json',
+    new QualityPipeline({
+      noveltyEnabled: true,
+      stemSimilarityThreshold: 0.92,
+      explanationSimilarityThreshold: 0.9,
+      qualityRetryLimit: 3,
+      styleRepetitionWindow: 6,
+    }),
   );
 
 /**

@@ -2,6 +2,7 @@ import cors from 'cors';
 import express from 'express';
 import { createRouter } from './api/router.js';
 import { ExamAgentController } from './agent/ExamAgentController.js';
+import { QualityPipeline } from './agent/QualityPipeline.js';
 import { QuestionBankManager } from './agent/QuestionBankManager.js';
 import { QuestionGenerator } from './agent/QuestionGenerator.js';
 import { env } from './config/env.js';
@@ -16,11 +17,19 @@ export const createApp = () => {
   const bedrockClient = new BedrockClient(env.awsRegion, env.awsProfile, env.bedrockModelId);
   const questionBankManager = new QuestionBankManager(env.questionBanksDir, certificationRegistry);
   const questionGenerator = new QuestionGenerator(bedrockClient, mcpClient, env.bedrockMockFallback);
+  const qualityPipeline = new QualityPipeline({
+    noveltyEnabled: env.qualityNoveltyEnabled,
+    stemSimilarityThreshold: env.qualityStemSimilarityThreshold,
+    explanationSimilarityThreshold: env.qualityExplanationSimilarityThreshold,
+    qualityRetryLimit: env.qualityRetryLimit,
+    styleRepetitionWindow: env.qualityStyleWindow,
+  });
   const examAgentController = new ExamAgentController(
     questionGenerator,
     questionBankManager,
     certificationRegistry,
     env.checkpointFilePath,
+    qualityPipeline,
   );
 
   app.use(cors());
@@ -33,7 +42,6 @@ export const createApp = () => {
   return { app, mcpClient };
 };
 
-// Carica la configurazione dei topic AI dal file YAML prima di avviare l'app
 TopicConfigLoader.load(env.topicConfigPath, certificationRegistry);
 
 const { app, mcpClient } = createApp();

@@ -11,10 +11,19 @@ const repositoryRoot = path.resolve(packageRoot, '../..');
 const questionBanksDir = path.resolve(repositoryRoot, QUESTION_BANKS_DIR);
 const checkpointFilePath = path.join(questionBanksDir, CHECKPOINT_FILE_NAME);
 const mcpServerEntrypoint = path.resolve(repositoryRoot, 'packages/mcp-server/dist/server.js');
-// Percorso al file di configurazione YAML per la distribuzione dei topic AI
 const topicConfigPath = path.resolve(repositoryRoot, 'data/ai-topic-config.yaml');
 
 const parsePort = (value: string | undefined, fallback: number): number => {
+  const parsed = Number(value);
+  return Number.isInteger(parsed) && parsed > 0 ? parsed : fallback;
+};
+
+const parseNumber = (value: string | undefined, fallback: number): number => {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : fallback;
+};
+
+const parseInteger = (value: string | undefined, fallback: number): number => {
   const parsed = Number(value);
   return Number.isInteger(parsed) && parsed > 0 ? parsed : fallback;
 };
@@ -31,4 +40,9 @@ export const env = {
   topicConfigPath,
   mcpServerCommand: process.execPath,
   mcpServerArgs: [mcpServerEntrypoint],
+  qualityNoveltyEnabled: process.env.QUALITY_NOVELTY_ENABLED !== 'false',
+  qualityStemSimilarityThreshold: parseNumber(process.env.QUALITY_STEM_SIMILARITY_THRESHOLD, 0.92),
+  qualityExplanationSimilarityThreshold: parseNumber(process.env.QUALITY_EXPLANATION_SIMILARITY_THRESHOLD, 0.9),
+  qualityRetryLimit: parseInteger(process.env.QUALITY_RETRY_LIMIT, 4),
+  qualityStyleWindow: parseInteger(process.env.QUALITY_STYLE_WINDOW, 6),
 } as const;

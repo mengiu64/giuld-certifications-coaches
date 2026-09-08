@@ -1,0 +1,397 @@
+{
+  "schema_version": "v1alpha1",
+  "feature": "question-quality-diversification",
+  "tasks": {
+    "1.1": {
+      "task_fingerprint": "sha256:6650360d421fc3a86521bc53f61108bba23cf02f197624c6092f90aee70b6389",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "shared"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:d01481120a495111efc604d317e60e72b13c0dc956e1711fc4a2bee43ba6987d"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "1.2": {
+      "task_fingerprint": "sha256:6e9b35318bdc6efce55ac05c6e9ff8bcf737a01d00dae041993c4e22547916a0",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "shared",
+            "question-bank-schema"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:f52ce8818e5b739a5fcd347926902e90ee967151c879f2d1abab24e44f7da809"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "2.1": {
+      "task_fingerprint": "sha256:ff3ade2961066c653429e9e87b996a0c287990241af80dd22e5bccf63d293cbf",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "scenario-profile-builder"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:23131d5965dac9613eae48569a9e143ac4b885017adbc383a09a9fc5d9dca0f4"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "2.2": {
+      "task_fingerprint": "sha256:7d343c107fb319d8f559b9e20cf7cd5902cd269c4f8e1e62bfc0df49b8997122",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "domain-usecase-planner"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:421be2c2fd0409541753c084386b6852764c4fc37e7057fc26b5b120fc4ac381"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "2.3": {
+      "task_fingerprint": "sha256:579c2f4f886a0c59353acd7825642dca03d3fd6f1746a58fce77a497ee8dc601",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "style-entropy"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:87d94f1b43a3e64f41459a37aa955b74841a672f430a003870034b1e2e49c5cd"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "3.1": {
+      "task_fingerprint": "sha256:c5ad0a3463d17c7a39b88aab763448d7ab7fd95ba2a0cc871865abdbee569e90",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "multi-pass-reviewer"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:4715011dbf51acbf8c6a938047b64e70d1d787285739454e7f70f6a03fd21e13"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "3.2": {
+      "task_fingerprint": "sha256:4f227bed93e23a21cb5fba6d6e3c49aa96c217f30cdff8db449fb10a5b963a66",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "distractor-quality-validator"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:c7019253c44be45112b2f6e983e9db67e91e1310136423f2b57a4e76219de77b"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "3.3": {
+      "task_fingerprint": "sha256:d0d2ce462db2c0f64d4f193c298e774f2ad450c126851d839ff2a02ea9da49dd",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "explanation-rubric-validator"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:797c3bc637fcc523f6d3dbf0f9d81db83edb2d26b19200f2d1fb646a3bcde90f"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "3.4": {
+      "task_fingerprint": "sha256:7a1b87c8e865363bcaf0ef404b006f468af6fc9d04804640ca8898afdfcf7e5e",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "novelty-gate"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:ef8f003851a17706efbfb0f2ba60c2bf13552715c4f59d3c598213b64bae7914"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "4.1": {
+      "task_fingerprint": "sha256:19e844758344930fb72a64e31337d73452916c1a6b35da4132c3aa13be88d2b9",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "quality-kpi-aggregator"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:b4453e3656dd5b6230439886d55c31fd8b31068e16e235576dc1db2aefb86888"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "4.2": {
+      "task_fingerprint": "sha256:c2a6e4dfdaa978cabfcb58b7f88e290d2b7a5efdf79d39afedd2b2bb3e594b3e",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "generation-status-api"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:b8f28884286550927b6f4267dfb2e486165954a3fbe3bf58af45ea2abadedcfa"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "5.1": {
+      "task_fingerprint": "sha256:a593d720788646320d6ca8cc1f7ea584900077a3430dec1afc8b495e6da549ee",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "property"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:fdf9879b35a63604f4cbfd04bf006b3ed8d6035b908a6657a34f9f6914e4abd0"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "5.2": {
+      "task_fingerprint": "sha256:41411ab4a6f362cc825e84ad378c7b61f40df24d767d4716a3b90b8ae865fb59",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "quality-pipeline-integration"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:283c699985d217c0cea3aec4585faaa96f652f2052894cbdec09add146ff0845"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    },
+    "5.3": {
+      "task_fingerprint": "sha256:67c915e138ebfd874883aa7903a484f2b7e9702d838dcf8f6f160aca37d9d647",
+      "requirements_fingerprint": "sha256:acd7c878e55624c98671b623b7d841c324f3641d8a74230c09ffbeec1a7eb33d",
+      "design_fingerprint": "sha256:23782f5b9e4375a493f1b06abb2569704878fd93fe9fc481f9e87aa8da48a96a",
+      "tasks_fingerprint": "sha256:d41881f501f0e20dab4c617a4d67a7ae258efbace97a5675abd3c0bc6ef1ede0",
+      "code_identity": "sha256:955a35ce4faab2456f5802e7b848303eea01e65d777f547e6556f0da615c35ca",
+      "profile": {
+        "platform": "linux/amd64",
+        "walden": "v0.10.1"
+      },
+      "steps": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "test",
+            "--",
+            "backend",
+            "performance-budget"
+          ],
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "output_digest": "sha256:209afc67c54a0021ee393a252c276afa1387257f20e4191d23c7285c82c75089"
+        }
+      ],
+      "result": "passed",
+      "verified_at": "2026-09-08T14:29:31Z"
+    }
+  }
+}

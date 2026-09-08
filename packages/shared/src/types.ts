@@ -10,6 +10,76 @@ export interface QuestionOption {
   text: string;
 }
 
+export interface ScenarioProfile {
+  industry: string;
+  organizationSize: 'startup' | 'mid-market' | 'enterprise';
+  geographyCompliance: string;
+  migrationMaturity: 'greenfield' | 'brownfield' | 'hybrid';
+  businessObjective: string;
+}
+
+export interface StyleSignature {
+  openingPattern: string;
+  decisionIntent: string;
+  rhetoricalShape: string;
+}
+
+export interface DistractorAnalysisItem {
+  label: QuestionLabel;
+  misconceptionClass: string;
+  reason: string;
+}
+
+export interface OptionRationale {
+  label: QuestionLabel;
+  rationale: string;
+}
+
+export interface ExplanationRubric {
+  correctOptionRationale: string;
+  incorrectOptionRationales: OptionRationale[];
+}
+
+export interface MultiPassReviewResult {
+  pass: 'writer' | 'technical' | 'exam';
+  valid: boolean;
+  issues: string[];
+}
+
+export interface MultiPassReviewOutcome {
+  passed: boolean;
+  results: MultiPassReviewResult[];
+}
+
+export interface NoveltyScores {
+  stemSimilarity: number;
+  explanationSimilarity: number;
+  thresholdVersion: string;
+}
+
+export interface QualityGateDecision {
+  gateId:
+    | 'scenario-diversity'
+    | 'use-case-coverage'
+    | 'style-entropy'
+    | 'multi-pass-review'
+    | 'distractor-quality'
+    | 'explanation-rubric'
+    | 'novelty';
+  result: 'pass' | 'reject';
+  reasonCode: string;
+  severity: 'info' | 'warning' | 'blocking';
+}
+
+export interface QualityKpiReport {
+  diversityIndex: number;
+  serviceRepetitionRatio: number;
+  styleEntropyScore: number;
+  noveltyRejectRate: number;
+  reviewFlag: boolean;
+  generatedAt: string;
+}
+
 export interface Question {
   questionId: string;
   stem: string;
@@ -20,6 +90,14 @@ export interface Question {
   explanation: string;
   format: QuestionFormat;
   referenceUrl?: string | undefined;
+  scenarioProfile?: ScenarioProfile | undefined;
+  useCaseFamily?: string | undefined;
+  styleSignature?: StyleSignature | undefined;
+  distractorAnalysis?: DistractorAnalysisItem[] | undefined;
+  explanationRubric?: ExplanationRubric | undefined;
+  multiPassReview?: MultiPassReviewOutcome | undefined;
+  noveltyScores?: NoveltyScores | undefined;
+  qualityGateDecisions?: QualityGateDecision[] | undefined;
 }
 
 export type GeneratedQuestionDraft = Omit<Question, 'questionId'>;
@@ -31,6 +109,7 @@ export interface QuestionBank {
   examCode: string;
   createdAt: string;
   questions: Question[];
+  qualityKpis?: QualityKpiReport | undefined;
 }
 
 export interface QuestionBankSummary {
@@ -128,6 +207,8 @@ export interface GenerationStatus {
   message: string;
   checkpointPath?: string | undefined;
   resumedFromCheckpoint?: boolean | undefined;
+  qualityKpis?: QualityKpiReport | undefined;
+  reviewFlag?: boolean | undefined;
 }
 
 export interface GenerationPlanItem {
@@ -139,6 +220,7 @@ export interface GenerationPlanItem {
    * (es. "generative-ai" richiede riferimenti a servizi AWS di AI generativa).
    */
   topic?: string | undefined;
+  useCaseFamily?: string | undefined;
 }
 
 export interface GenerationCheckpoint {

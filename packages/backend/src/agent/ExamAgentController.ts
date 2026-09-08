@@ -9,11 +9,13 @@ import {
   type GenerationCheckpoint,
   type GenerationPlanItem,
   type GenerationStatus,
+  type Question,
   type QuestionBank,
   type QuestionFormat,
 } from '@aws-exam-generator/shared';
 import { QuestionBankManager } from './QuestionBankManager.js';
 import { QuestionGenerator } from './QuestionGenerator.js';
+import { DomainUseCasePlanner, QualityKpiAggregator, QualityPipeline, countNoveltyRejects } from './QualityPipeline.js';
 
 const shuffle = <T>(values: T[]): T[] => {
   const next = [...values];
@@ -50,12 +52,14 @@ export class ExamAgentController {
     updatedAt: new Date().toISOString(),
     message: 'No generation job is active.',
   };
+  private readonly useCasePlanner = new DomainUseCasePlanner();
 
   constructor(
     private readonly questionGenerator: QuestionGenerator,
     private readonly questionBankManager: QuestionBankManager,
     private readonly certificationRegistry: CertificationRegistry,
     private readonly checkpointPath: string,
+    private readonly qualityPipeline: QualityPipeline,
   ) {}
 
   getStatus(): GenerationStatus {
@@ -75,7 +79,6 @@ export class ExamAgentController {
       throw notFound;
     }
 
-    // Logga la configurazione di distribuzione topic se presente nella certificazione
     if (certification.topicDistribution) {
       console.info(
         `[ExamAgentController] Topic distribution loaded for ${certification.id}: ${JSON.stringify(certification.topicDistribution)}`,
@@ -119,6 +122,7 @@ export class ExamAgentController {
   ): Promise<void> {
     try {
       const plan = resumeFrom?.plan ?? this.buildPlan(certification);
+      const historyCorpus = await this.questionBankManager.getAllQuestionsForCertification(certification.id);
       const bank: QuestionBank = {
         bankId,
         certificationId: certification.id,
@@ -128,20 +132,23 @@ export class ExamAgentController {
         questions: resumeFrom ? [...resumeFrom.questions] : [],
       };
       const startIndex = bank.questions.length;
+      let noveltyRejects = 0;
+      let qualityAttempts = 0;
 
       for (let index = startIndex; index < plan.length; index += 1) {
         const item = plan[index]!;
-        // Passa il topic opzionale al generatore per attivare la logica AI-topic quando presente
-        const question = await this.questionGenerator.generateQuestion(certification, item.domainId, item.format, item.topic);
-        bank.questions.push(question);
+        const approved = await this.generateWithQualityGates(certification, bankId, index, item, bank.questions, historyCorpus);
+        qualityAttempts += approved.attempts;
+        noveltyRejects += approved.noveltyRejects;
+        bank.questions.push(approved.question);
+
         this.status = {
           ...this.status,
           generatedQuestions: index + 1,
           updatedAt: new Date().toISOString(),
           message: `Generated ${index + 1}/${plan.length} questions for ${certification.id}.`,
         };
-        // Checkpoint after every question so no generated question is lost if the
-        // process is interrupted (crash, restart, network failure, etc.).
+
         const checkpoint: GenerationCheckpoint = {
           certificationId: certification.id,
           bankId,
@@ -154,6 +161,9 @@ export class ExamAgentController {
         await this.questionBankManager.writeCheckpoint(checkpointPath, checkpoint);
       }
 
+      const qualityKpis = QualityKpiAggregator.compute(bank.questions, noveltyRejects, qualityAttempts);
+      bank.qualityKpis = qualityKpis;
+
       await this.questionBankManager.saveQuestionBank(bank);
       await this.questionBankManager.clearCheckpoint(checkpointPath);
       this.status = {
@@ -165,6 +175,8 @@ export class ExamAgentController {
         startedAt: this.status.startedAt,
         updatedAt: new Date().toISOString(),
         message: `Question bank ${bankId} generated successfully.`,
+        qualityKpis,
+        reviewFlag: qualityKpis.reviewFlag,
       };
     } catch (error) {
       this.status = {
@@ -177,6 +189,53 @@ export class ExamAgentController {
     } finally {
       this.active = false;
     }
+  }
+
+  private async generateWithQualityGates(
+    certification: CertificationConfig,
+    bankId: string,
+    index: number,
+    item: GenerationPlanItem,
+    inProgressQuestions: Question[],
+    historicalCorpus: Question[],
+  ): Promise<{ question: Question; attempts: number; noveltyRejects: number }> {
+    let attempts = 0;
+    let noveltyRejects = 0;
+    let lastError = 'Unknown quality pipeline rejection';
+
+    while (attempts < this.qualityPipeline.maxRetries()) {
+      attempts += 1;
+      const generated = await this.questionGenerator.generateQuestion(
+        certification,
+        item.domainId,
+        item.format,
+        item.topic,
+      );
+      generated.useCaseFamily = item.useCaseFamily;
+
+      const evaluated = this.qualityPipeline.evaluateCandidate(
+        generated,
+        inProgressQuestions,
+        historicalCorpus,
+        `${bankId}:${index}:${attempts}`,
+      );
+      noveltyRejects += countNoveltyRejects(evaluated.decisions);
+
+      if (evaluated.accepted) {
+        return {
+          question: evaluated.question,
+          attempts,
+          noveltyRejects,
+        };
+      }
+
+      const lastDecision = evaluated.decisions[evaluated.decisions.length - 1];
+      lastError = `${lastDecision?.gateId ?? 'quality-gate'}:${lastDecision?.reasonCode ?? 'rejected'}`;
+    }
+
+    throw new Error(
+      `Question generation exceeded quality retry limit for domain=${item.domainId}, format=${item.format}, reason=${lastError}`,
+    );
   }
 
   private checkpointPathFor(certificationId: string): string {
@@ -206,60 +265,42 @@ export class ExamAgentController {
     );
     const shuffledDomains = shuffle(domainQueue);
     const shuffledFormats = shuffle(formatQueue);
-    // Costruzione del piano con dominio e formato assegnati
     const plan: GenerationPlanItem[] = Array.from({ length: certification.totalQuestions }, (_, index) => ({
       domainId: shuffledDomains[index] ?? certification.domains[0]!.id,
       format: shuffledFormats[index] ?? (FORMAT_OPTION_COUNT['single-4'] ? 'single-4' : 'multi-5'),
     }));
 
-    // Assegnazione dei tag di topic al piano (no-op se topicDistribution è assente)
     this.assignTopicTags(plan, certification);
+    this.useCasePlanner.assign(plan, certification);
 
     return plan;
   }
 
-  /**
-   * Assegna i tag di topic agli elementi del piano di generazione, distribuendo
-   * ciascun topic proporzionalmente ai pesi dei domini tramite allocazione
-   * largest-remainder (metodo di Hamilton).
-   *
-   * @param plan - Array di elementi del piano da mutare in-place aggiungendo il campo `topic`.
-   * @param certification - Configurazione della certificazione contenente `topicDistribution` e `domains`.
-   * @returns void — il piano viene modificato in-place.
-   */
   private assignTopicTags(plan: GenerationPlanItem[], certification: CertificationConfig): void {
-    // Se non è definita una distribuzione di topic, non assegnare alcun tag
     if (!certification.topicDistribution || Object.keys(certification.topicDistribution).length === 0) {
       return;
     }
 
-    // Calcola il numero totale di elementi per ciascun topic tramite largest-remainder
     const topicWeights = Object.entries(certification.topicDistribution).map(([topic, percentage]) => ({
       key: topic,
       weight: percentage,
     }));
     const topicCounts = distributeCounts(topicWeights, certification.totalQuestions);
 
-    // Prepara i pesi dei domini per la distribuzione intra-topic
     const domainWeights = certification.domains.map((domain) => ({
       key: domain.id,
       weight: domain.percentage,
     }));
 
-    // Per ciascun topic, distribuisci il suo conteggio tra i domini proporzionalmente
-    // ai pesi di ciascun dominio (largest-remainder per dominio)
     const domainTopicCounts = new Map<string, Map<string, number>>();
     for (const [topic, count] of topicCounts) {
-      // Allocazione del topic corrente tra i domini usando largest-remainder
       const perDomain = distributeCounts(domainWeights, count);
       domainTopicCounts.set(topic, perDomain);
     }
 
-    // Logga il conteggio per topic e la ripartizione per dominio dopo la costruzione del piano
     console.info(
       `[ExamAgentController] Topic allocation for ${certification.id}: ${JSON.stringify(Object.fromEntries(topicCounts))}`,
     );
-    // Logga la ripartizione dettagliata per dominio di ciascun topic
     const perDomainBreakdown: Record<string, Record<string, number>> = {};
     for (const [topic, perDomain] of domainTopicCounts) {
       perDomainBreakdown[topic] = Object.fromEntries(perDomain);
@@ -268,24 +309,19 @@ export class ExamAgentController {
       `[ExamAgentController] Per-domain topic breakdown for ${certification.id}: ${JSON.stringify(perDomainBreakdown)}`,
     );
 
-    // Raggruppa gli indici degli elementi del piano per dominio
     const domainItemIndices = new Map<string, number[]>();
-    for (let i = 0; i < plan.length; i++) {
+    for (let i = 0; i < plan.length; i += 1) {
       const item = plan[i]!;
       const indices = domainItemIndices.get(item.domainId) ?? [];
       indices.push(i);
       domainItemIndices.set(item.domainId, indices);
     }
 
-    // Per ciascun dominio, assegna i tag di topic ai primi N elementi,
-    // dove N è la quota di quel topic assegnata al dominio corrente.
-    // L'assegnazione avviene in ordine di topic per garantire determinismo.
     for (const [domainId, indices] of domainItemIndices) {
       let offset = 0;
       for (const [topic, perDomain] of domainTopicCounts) {
         const countForDomain = perDomain.get(domainId) ?? 0;
-        // Assegna il topic ai prossimi `countForDomain` elementi di questo dominio
-        for (let j = 0; j < countForDomain && offset + j < indices.length; j++) {
+        for (let j = 0; j < countForDomain && offset + j < indices.length; j += 1) {
           plan[indices[offset + j]!]!.topic = topic;
         }
         offset += countForDomain;
