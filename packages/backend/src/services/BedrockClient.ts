@@ -10,7 +10,8 @@ const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout
 // unreachable endpoint, a stuck SSO/credential provider, or a silently dropped connection cannot
 // hang question generation forever - it always surfaces as an error the caller can retry or fall
 // back on.
-const BEDROCK_CALL_TIMEOUT_MS = 20_000;
+// Increased from 20s to 60s to accommodate model initialization and network latency in SSO regions
+const BEDROCK_CALL_TIMEOUT_MS = 60_000;
 
 const withTimeout = <T>(operation: () => Promise<T>, timeoutMs: number, label: string): Promise<T> =>
   Promise.race([
