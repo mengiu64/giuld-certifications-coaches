@@ -178,12 +178,15 @@ import { v4 as uuidv4 } from 'uuid';
             // Continua con il prossimo tentativo di retry
           } catch (error) {
             // Errore generico durante la generazione: gestito con fallback
+            console.error(`[QuestionGenerator] AI-topic attempt ${attempt}/${maxAttempts} failed:`, error instanceof Error ? error.message : String(error));
             if (!this.allowMockFallback) {
               throw error;
             }
             // Per errori non di validazione, ricade direttamente sulla mock AI-topic
             // Log di errore: fallback al mock per errore durante la generazione
-            console.error(`[QuestionGenerator] AI-topic retries exhausted, falling back to mock: domain=${domainId}, topic=${topic}`);
+            if (attempt === maxAttempts) {
+              console.error(`[QuestionGenerator] AI-topic retries exhausted, falling back to mock: domain=${domainId}, topic=${topic}`);
+            }
             const draft = this.buildAiTopicMockQuestion(certification, domainId, format);
             QuestionValidator.assertValidQuestion(draft);
             return {
