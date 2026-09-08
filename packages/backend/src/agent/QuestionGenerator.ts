@@ -279,6 +279,7 @@ AWS Documentation Context: ${context.map((entry) => `${entry.title} — ${entry.
 
 Generate a realistic, scenario-based question following these rules:
 - Stem: 50-200 words of scenario context + 1 clear interrogative
+- VARY the opening style: alternate between business scenario, technical challenge, compliance requirement, performance issue, architecture decision
 - For single-4: 4 options, exactly 1 correct
 - For multi-5: 5 options, exactly 2-3 correct
 - For multi-6: 6 options, exactly 2-3 correct
@@ -331,6 +332,7 @@ IMPORTANT AI TOPIC REQUIREMENTS:
 
 Generate a realistic, scenario-based question following these rules:
 - Stem: 50-200 words of scenario context + 1 clear interrogative
+- VARY the opening style: alternate between business requirement, technical implementation challenge, cost optimization problem, security architecture issue, performance tuning scenario
 - For single-4: 4 options, exactly 1 correct
 - For multi-5: 5 options, exactly 2-3 correct
 - For multi-6: 6 options, exactly 2-3 correct
