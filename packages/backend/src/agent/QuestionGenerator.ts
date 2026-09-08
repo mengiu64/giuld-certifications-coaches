@@ -277,9 +277,17 @@ Domain: ${domainId}
 Format: ${format}
 AWS Documentation Context: ${context.map((entry) => `${entry.title} — ${entry.snippet} (${entry.url})`).join(' | ')}
 
+CRITICAL STEM REQUIREMENTS (MUST follow ALL):
+1. Length: MUST be exactly 50-200 words (count every word)
+2. Question mark: MUST END with a question mark (?)
+3. Exam keyword: MUST include at least ONE of these words: least, most, best, optimal, cost, resilient, operational, scalable, efficient, effective, maintain, support, ensure, address, mitigate, reduce
+4. Variety: Alternate opening style between: business scenario, technical challenge, compliance requirement, performance issue, architecture decision, migration strategy
+
+Example of GOOD stem (54 words):
+"A retail company needs to modernize their e-commerce platform for peak season traffic. Their current monolithic application cannot scale efficiently during peak demand. They require the most cost-effective solution that can handle 10x traffic spikes while maintaining low latency. Which approach best achieves their scalability and cost optimization goals?"
+
 Generate a realistic, scenario-based question following these rules:
-- Stem: 50-200 words of scenario context + 1 clear interrogative
-- VARY the opening style: alternate between business scenario, technical challenge, compliance requirement, performance issue, architecture decision
+- Stem: 50-200 words of scenario context + 1 clear interrogative (MUST end with ?)
 - For single-4: 4 options, exactly 1 correct
 - For multi-5: 5 options, exactly 2-3 correct
 - For multi-6: 6 options, exactly 2-3 correct
@@ -325,14 +333,21 @@ Domain: ${domainId}
 Format: ${format}
 AWS AI Services Documentation Context: ${context.map((entry) => `${entry.title} — ${entry.snippet} (${entry.url})`).join(' | ')}
 
+CRITICAL STEM REQUIREMENTS (MUST follow ALL):
+1. Length: MUST be exactly 50-200 words (count every word)
+2. Question mark: MUST END with a question mark (?)
+3. Exam keyword: MUST include at least ONE of these words: least, most, best, optimal, cost, resilient, operational, scalable, efficient, effective, maintain, support, ensure, address, mitigate, reduce
+4. AI Service mention: MUST explicitly name at least one service from: ${AI_TOPIC_SERVICES.join(', ')}
+
 IMPORTANT AI TOPIC REQUIREMENTS:
-- The question MUST reference at least one service from this list in the question stem: ${AI_TOPIC_SERVICES.join(', ')}
-- The "services" field in your response MUST include at least one service from: ${AI_TOPIC_SERVICES.join(', ')}
 - Focus the scenario on Generative AI use cases (e.g., foundation models, RAG, prompt engineering, AI assistants)
+- Vary opening style: business requirement, technical implementation challenge, cost optimization problem, security architecture issue, performance tuning scenario
+
+Example of GOOD AI stem (56 words):
+"A financial services company wants to build a customer support chatbot using foundation models. They need the most cost-effective way to integrate Amazon Bedrock into their existing infrastructure while maintaining data compliance. The solution must handle 1000 concurrent users during peak hours. Which approach best leverages Amazon Bedrock's capabilities while optimizing costs?"
 
 Generate a realistic, scenario-based question following these rules:
-- Stem: 50-200 words of scenario context + 1 clear interrogative
-- VARY the opening style: alternate between business requirement, technical implementation challenge, cost optimization problem, security architecture issue, performance tuning scenario
+- Stem: 50-200 words of scenario context + 1 clear interrogative (MUST end with ?)
 - For single-4: 4 options, exactly 1 correct
 - For multi-5: 5 options, exactly 2-3 correct
 - For multi-6: 6 options, exactly 2-3 correct
