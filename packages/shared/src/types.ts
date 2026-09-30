@@ -192,7 +192,7 @@ export interface DocumentationResult {
   snippet: string;
   service: string;
   domain: string;
-  source: 'aws-docs-mock';
+  source: 'aws-docs-mock' | 'aws-docs-live';
 }
 
 export interface GenerationStatus {

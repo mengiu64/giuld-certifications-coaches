@@ -10,8 +10,11 @@ const packageRoot = path.resolve(path.dirname(currentFilePath), '../..');
 const repositoryRoot = path.resolve(packageRoot, '../..');
 const questionBanksDir = path.resolve(repositoryRoot, QUESTION_BANKS_DIR);
 const checkpointFilePath = path.join(questionBanksDir, CHECKPOINT_FILE_NAME);
-const mcpServerEntrypoint = path.resolve(repositoryRoot, 'packages/mcp-server/dist/server.js');
+const mockMcpServerEntrypoint = path.resolve(repositoryRoot, 'packages/mcp-server/dist/server.js');
 const topicConfigPath = path.resolve(repositoryRoot, 'data/ai-topic-config.yaml');
+
+// MCP_SERVER_MODE=mock keeps using the bundled fake server (offline/CI, no `uv` required)
+const useMockMcpServer = process.env.MCP_SERVER_MODE === 'mock';
 
 const parsePort = (value: string | undefined, fallback: number): number => {
   const parsed = Number(value);
@@ -38,8 +41,10 @@ export const env = {
   checkpointFilePath,
   repositoryRoot,
   topicConfigPath,
-  mcpServerCommand: process.execPath,
-  mcpServerArgs: [mcpServerEntrypoint],
+  mcpServerCommand: useMockMcpServer ? process.execPath : (process.env.MCP_SERVER_COMMAND ?? 'uvx'),
+  mcpServerArgs: useMockMcpServer
+    ? [mockMcpServerEntrypoint]
+    : (process.env.MCP_SERVER_ARGS?.split(' ').filter(Boolean) ?? ['awslabs.aws-documentation-mcp-server@latest']),
   qualityNoveltyEnabled: process.env.QUALITY_NOVELTY_ENABLED !== 'false',
   qualityStemSimilarityThreshold: parseNumber(process.env.QUALITY_STEM_SIMILARITY_THRESHOLD, 0.92),
   qualityExplanationSimilarityThreshold: parseNumber(process.env.QUALITY_EXPLANATION_SIMILARITY_THRESHOLD, 0.9),

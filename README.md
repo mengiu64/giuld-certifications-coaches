@@ -17,7 +17,7 @@ An AI-powered practice exam generator for **multiple AWS certifications** across
 ## Packages
 
 - `packages/shared`: shared types, schemas, certification registry, scoring, session helpers
-- `packages/mcp-server`: stdio MCP server returning realistic AWS documentation snippets
+- `packages/mcp-server`: stdio MCP server returning realistic AWS documentation snippets (mock fallback, see MCP section below)
 - `packages/backend`: Express API, generation controller, filesystem bank manager, Bedrock integration
 - `packages/frontend`: React SPA for exam, study, review, and admin flows
 
@@ -39,6 +39,24 @@ An AI-powered practice exam generator for **multiple AWS certifications** across
 - npm 9+
 - AWS Account with Amazon Bedrock access (optional — falls back to a mock generator without it)
 - AWS CLI v2 (if using real AWS credentials)
+- `uv`/`uvx` ([Astral install guide](https://docs.astral.sh/uv/getting-started/installation/)) — runs the official `awslabs.aws-documentation-mcp-server` used for AWS documentation lookups
+
+## MCP documentation server
+
+By default the backend spawns the official, open-source **AWS Documentation MCP Server** (`awslabs.aws-documentation-mcp-server`) via `uvx`, so question generation is grounded in real, live AWS documentation instead of static snippets. It's free (Apache-2.0, runs locally, no AWS credentials required for doc search).
+
+| Variable | Default | Description |
+|----------|---------|--------------|
+| `MCP_SERVER_MODE` | (unset) | Set to `mock` to use the bundled `packages/mcp-server` fake server instead (offline/CI, no `uv` required) |
+| `MCP_SERVER_COMMAND` | `uvx` | Override the command used to launch the MCP server |
+| `MCP_SERVER_ARGS` | `awslabs.aws-documentation-mcp-server@latest` | Space-separated args passed to the command |
+| `AWS_DOCUMENTATION_PARTITION` | `aws` | Set to `aws-cn` to query AWS China documentation instead |
+
+If `uv`/`uvx` isn't installed, install it with:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
 ## Storage
 
@@ -127,6 +145,7 @@ Parametri rilevanti per la generazione:
 | `AWS_PROFILE` | (vuoto) | Profilo AWS CLI da usare. Se vuoto, usa la chain di default |
 | `BEDROCK_MOCK_FALLBACK` | `true` | Se `true`, ricade su mock quando Bedrock fallisce |
 | `VITE_API_BASE_URL` | `http://localhost:4000/api` | URL API per il frontend |
+| `MCP_SERVER_MODE` | (vuoto) | `mock` per usare il finto server interno invece del vero `awslabs.aws-documentation-mcp-server` (richiede `uv`/`uvx`) |
 
 ### Build del progetto
 

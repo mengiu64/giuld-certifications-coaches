@@ -191,7 +191,7 @@ export const documentationResultSchema = z.object({
   snippet: z.string().min(1),
   service: z.string().min(1),
   domain: z.string().min(1),
-  source: z.literal('aws-docs-mock'),
+  source: z.enum(['aws-docs-mock', 'aws-docs-live']),
 });
 
 export const generationStatusSchema = z.object({

@@ -4,6 +4,13 @@ import { MCP_RETRY_ATTEMPTS, MCP_RETRY_INTERVAL_MS, documentationResultSchema, t
 
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
+// Shape of a single hit from the official aws-documentation-mcp-server search_documentation tool
+interface AwsDocSearchResult {
+  url: string;
+  title: string;
+  context?: string | null;
+}
+
 export class McpClient {
   private client: Client | null = null;
   private transport: StdioClientTransport | null = null;
@@ -18,9 +25,17 @@ export class McpClient {
     if (this.connected) {
       return;
     }
+    // Child inherits our env so `uvx` resolves via PATH and server-specific vars (e.g. AWS_DOCUMENTATION_PARTITION) pass through
+    const childEnv: Record<string, string> = {};
+    for (const [key, value] of Object.entries(process.env)) {
+      if (typeof value === 'string') {
+        childEnv[key] = value;
+      }
+    }
     this.transport = new StdioClientTransport({
       command: this.command,
       args: this.args,
+      env: childEnv,
     });
     this.client = new Client(
       {
@@ -36,15 +51,18 @@ export class McpClient {
   }
 
   async searchByService(serviceName: string, topic?: string): Promise<DocumentationResult[]> {
-    return this.callTool('search_by_service', { serviceName, topic });
+    const searchPhrase = topic ? `${serviceName} ${topic}` : serviceName;
+    return this.searchDocumentation(searchPhrase, serviceName, undefined);
   }
 
   async searchByDomain(domain: string, topic?: string): Promise<DocumentationResult[]> {
-    return this.callTool('search_by_domain', { domain, topic });
+    const searchPhrase = topic ? `${domain} ${topic}` : domain;
+    return this.searchDocumentation(searchPhrase, undefined, domain);
   }
 
   async searchByTopic(query: string, domains?: string[], services?: string[]): Promise<DocumentationResult[]> {
-    return this.callTool('search_by_topic', { query, domains, services });
+    const searchPhrase = [query, ...(services ?? [])].join(' ');
+    return this.searchDocumentation(searchPhrase, services?.[0], domains?.[0]);
   }
 
   async close(): Promise<void> {
@@ -54,7 +72,21 @@ export class McpClient {
     this.connected = false;
   }
 
-  private async callTool(name: string, args: Record<string, unknown>): Promise<DocumentationResult[]> {
+  private async searchDocumentation(searchPhrase: string, service: string | undefined, domain: string | undefined): Promise<DocumentationResult[]> {
+    const payload = await this.callTool('search_documentation', { search_phrase: searchPhrase, limit: 5 });
+    const results = (payload.search_results ?? []) as AwsDocSearchResult[];
+    const mapped = results.map((entry) => ({
+      title: entry.title,
+      url: entry.url,
+      snippet: entry.context && entry.context.trim().length > 0 ? entry.context : entry.title,
+      service: service ?? 'AWS',
+      domain: domain ?? 'general',
+      source: 'aws-docs-live' as const,
+    }));
+    return documentationResultSchema.array().parse(mapped);
+  }
+
+  private async callTool(name: string, args: Record<string, unknown>): Promise<Record<string, unknown>> {
     let attempt = 0;
     let lastError: unknown;
 
@@ -66,10 +98,9 @@ export class McpClient {
         const content = (response as { content?: Array<{ type?: string; text?: string }> } | undefined)?.content ?? [];
         const textPayload = content.find((entry) => entry.type === 'text')?.text;
         if (!textPayload) {
-          return [];
+          return {};
         }
-        const parsed = JSON.parse(textPayload);
-        return documentationResultSchema.array().parse(parsed);
+        return JSON.parse(textPayload);
       } catch (error) {
         lastError = error;
         this.connected = false;
@@ -82,3 +113,4 @@ export class McpClient {
     throw new Error(`MCP tool ${name} failed after ${MCP_RETRY_ATTEMPTS} attempts: ${String(lastError)}`);
   }
 }
+
